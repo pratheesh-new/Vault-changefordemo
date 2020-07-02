@@ -25,4 +25,4 @@ volumes:
 monitor:
     notify: pprasannan@cloudbourne.co
 properties:
-    revision : 06
+    revision : 07
