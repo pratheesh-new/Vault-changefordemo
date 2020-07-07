@@ -10,19 +10,19 @@ build:
     image_template: vault-1.2
     image_name: nutanix/vault
 deploy:
-    context: nutanix/DEV
+    context: nutanix/GL
     replicas: 1
     port:
     - 80
     - 8200
 volumes:
-  - claim: vault-home
+  - claim: vaultgraylog-home
     mount: /appz/home
     name: home
-  - claim: vault-data
+  - claim: vaultgraylog-data 
     mount: /appz/data
     name: data
 monitor:
     notify: pprasannan@cloudbourne.co
 properties:
-    revision : 13
+    revision : 14
