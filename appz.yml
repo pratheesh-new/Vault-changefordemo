@@ -4,25 +4,25 @@ app:
     notify: pprasannan@cloudbourne.co
 build:
     version: 0.4
-    env: GL
+    env: QA
     build_file: none
     output_files: output/*.zip
     image_template: vault-1.2
     image_name: nutanix/vault
 deploy:
-    context: nutanix/GL
+    context: nutanix/QA
     replicas: 1
     port:
     - 80
     - 8200
 volumes:
-  - claim: vaultgraylog-home
+  - claim: vault-home-qa
     mount: /appz/home
     name: home
-  - claim: vaultgraylog-data 
+  - claim: vault-data-qa 
     mount: /appz/data
     name: data
 monitor:
     notify: pprasannan@cloudbourne.co
 properties:
-    revision : 15
+    revision : 16
